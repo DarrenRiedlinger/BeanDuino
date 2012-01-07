@@ -90,8 +90,8 @@ void loop() {
       //If we reach the decimal point
       if (Serial.peek() == '.')
       {
-        serialDiv = (Serial.read()); // Use serialDiv to temporarily store the garbage char
-        serialDiv = 10; // Now set to first decimal place
+        (void) Serial.read(); // Discard the decimal place
+        serialDiv = 10; // Set divider to the '10ths' digit
       }
       
       // Process non-fractional decimal places
